@@ -1,4 +1,5 @@
 #  Dokumentasi
+## [Auth]('./../README-AUTH.md')
 ## Threads
 ### Add Threads Domains
 1. kita mulai dengan melakukan membuat table threads : npm run migrate create_table_threads
