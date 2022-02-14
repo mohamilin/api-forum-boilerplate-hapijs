@@ -14,10 +14,6 @@ class UserRepository {
   async getIdByUsername(username) {
     throw new Error('USER_REPOSITORY.METHOD_NOT_IMPLEMENTED');
   }
-
-  async owner(id){
-    throw new Error('USER_REPOSITORY.METHOD_NOT_IMPLEMENTED');
-  }
 }
 
 module.exports = UserRepository;
