@@ -29,21 +29,6 @@ describe("HTTP server", () => {
       expect(response.statusCode).toEqual(200);
       expect(responseJson.value).toEqual("Hello world!");
     });
-
-    it("should return 200 and hello world", async () => {
-      // Arrange
-      const server = await createServer({});
-      // Action
-      const response = await server.inject({
-        method: "GET",
-        url: "/api",
-      });
-      // Assert
-      const responseJson = JSON.parse(response.payload);
-      expect(response.statusCode).toEqual(200);
-      expect(responseJson.value).toEqual("Hi, WEB API");
-    });
-    
   });
 
   it("should handle server error correctly", async () => {
