@@ -22,4 +22,4 @@ jobs:
             git pull origin master
             npm install
             npm run migrate up
-            pm2 restart api-forum-boilerplate-hapijs
+            /usr/bin/pm2 restart api-forum-boilerplate-hapijs
