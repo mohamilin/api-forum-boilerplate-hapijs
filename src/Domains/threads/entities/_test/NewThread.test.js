@@ -1,16 +1,16 @@
-const NewThread = require("../NewThread");
+const NewThread = require('../NewThread');
 
-describe("NewThread entities", () => {
-  it("should throw error when payload not contain property ", () => {
+describe('NewThread entities', () => {
+  it('should throw error when payload not contain property ', () => {
     const payload = {};
 
     //   Action and assert
     expect(() => new NewThread(payload)).toThrowError(
-      "THREAD.NOT_CONTAIN_NEEDED"
+      'THREAD.NOT_CONTAIN_NEEDED',
     );
   });
 
-  it("should throw error when data not specification", () => {
+  it('should throw error when data not specification', () => {
     const payload = {
       owner: 123,
       title: true,
@@ -18,15 +18,15 @@ describe("NewThread entities", () => {
     };
 
     expect(() => new NewThread(payload)).toThrowError(
-      "THREAD.NOT_MEET_DATA_TYPE_SPECIFICATION"
+      'THREAD.NOT_MEET_DATA_TYPE_SPECIFICATION',
     );
   });
 
-  it("should thread correctly", () => {
+  it('should thread correctly', () => {
     const payload = {
-      owner: "user-123",
-      title: "lorem ipsum",
-      body: "lorem ipsum ipsum lorem",
+      owner: 'user-123',
+      title: 'lorem ipsum',
+      body: 'lorem ipsum ipsum lorem',
     };
 
     // action

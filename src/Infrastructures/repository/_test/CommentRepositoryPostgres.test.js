@@ -3,7 +3,6 @@ const CommentRepositoryPostgres = require("../CommentRepositoryPostgres");
 // DB
 const pool = require("../../database/postgres/pool");
 // Layer Domains
-const CommentRepository = require("../../../Domains/comments/CommentRepository");
 const AddedComment = require("../../../Domains/comments/entities/AddedComment");
 const NewComment = require("../../../Domains/comments/entities/NewComment");
 const DeletedComment = require("../../../Domains/comments/entities/DeletedComment");
@@ -172,33 +171,37 @@ describe("CommentRepositoryPostgres interface", () => {
     });
   });
 
-  // describe('getCommentWithThread function', () => {
-  //   it('getCommentWithThread: should correctly', async () => {
-  //     await UsersTableTestHelper.addUser({
-  //       id: 'user-xxx',
-  //     });
-  //     await ThreadsTableTestHelper.addThread({
-  //       id: 'thread-yyyy',
-  //       owner: 'user-xxx',
-  //     });
-  //     await CommentTableTestHelper.addComment({
-  //       id: 'comment-zzz',
-  //       threadId: 'thread-yyyy',
-  //       owner: 'user-xxx',
-  //       content: 'lorem ipsum',
-  //     });
+  describe("getCommentWithThread function", () => {
+    it("getCommentWithThread: should correctly", async () => {
+      await UsersTableTestHelper.addUser({
+        id: "user-xxx",
+      });
+      await ThreadsTableTestHelper.addThread({
+        id: "thread-yyyy",
+        owner: "user-xxx",
+      });
+      await CommentTableTestHelper.addComment({
+        id: "comment-zzz",
+        threadId: "thread-yyyy",
+        owner: "user-xxx",
+        content: "lorem ipsum",
+      });
 
-  //     const commentRepositoryPostgres = new CommentRepositoryPostgres(pool, {});
-  //     const comments = await commentRepositoryPostgres.getCommentWithThread(
-  //       'thread-yyyy',
-  //     );
+      const commentRepositoryPostgres = new CommentRepositoryPostgres(pool, {});
+      const comments = await commentRepositoryPostgres.getCommentWithThread(
+        "thread-yyyy"
+      );
 
-  //     expect(comments).toHaveLength(1);
-  //     expect(comments[0].id).toEqual('comment-zzz');
-  //     expect(comments[0].username).toEqual('dicoding');
-  //     expect(comments[0].date).toBeDefined();
-  //     expect(comments[0].content).toEqual('lorem ipsum');
-  //     expect(comments[0].is_delete).toEqual(false);
-  //   });
-  // });
+      expect(comments).toHaveLength(1);
+      expect(comments[0]).toHaveProperty("id");
+      expect(comments[0]).toHaveProperty("username");
+      expect(comments[0]).toHaveProperty("date");
+      expect(comments[0].id).toEqual("comment-zzz");
+      expect(comments[0]).toHaveProperty("username");
+      expect(comments[0].username).toEqual("dicoding");
+      expect(comments[0].date).toBeDefined();
+      expect(comments[0].content).toEqual("lorem ipsum");
+      expect(comments[0].is_delete).toEqual(false);
+    });
+  });
 });

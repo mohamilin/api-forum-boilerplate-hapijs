@@ -29,7 +29,7 @@ describe('GetComment entitie', () => {
       id: 'comment-123',
       content: 'lorem ipsum',
       username: 'amilin',
-      date: '2021-02-10',
+      date: { date: '2021-02-10' },
       is_delete: true,
     };
     const getComment = new GetComment(payload);

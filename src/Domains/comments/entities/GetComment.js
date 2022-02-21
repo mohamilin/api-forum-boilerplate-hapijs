@@ -20,7 +20,7 @@ class GetComment {
 
     if (
       typeof id !== 'string'
-      || typeof date !== 'string'
+      || typeof date !== 'object'
       || typeof username !== 'string'
       || typeof content !== 'string'
       || typeof is_delete !== 'boolean'

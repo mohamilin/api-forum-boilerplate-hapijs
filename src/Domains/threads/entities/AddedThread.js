@@ -9,15 +9,15 @@ class AddedThread {
 
   _verifyPayload({ id, title, owner }) {
     if (!id || !title || !owner) {
-      throw new Error("THREAD.NOT_CONTAIN_NEEDED");
+      throw new Error('THREAD.NOT_CONTAIN_NEEDED');
     }
 
     if (
-      typeof id !== "string" ||
-      typeof title !== "string" ||
-      typeof owner !== "string"
+      typeof id !== 'string'
+      || typeof title !== 'string'
+      || typeof owner !== 'string'
     ) {
-      throw new Error("THREAD.NOT_MEET_DATA_TYPE_SPECIFICATION");
+      throw new Error('THREAD.NOT_MEET_DATA_TYPE_SPECIFICATION');
     }
   }
 }
