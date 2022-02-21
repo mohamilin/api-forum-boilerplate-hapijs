@@ -10,12 +10,6 @@ class GetComment {
   }
 
   _verifyPayload({ id, date, username, content, is_delete }) {
-    console.log(typeof id);
-    console.log(typeof date);
-    console.log(typeof username);
-    console.log(typeof date);
-    console.log(typeof is_delete);
-
     if (!id || !date || !username || !content) {
       throw new Error("GET_COMMENT.NOT_CONTAIN_NEEDED");
     }
