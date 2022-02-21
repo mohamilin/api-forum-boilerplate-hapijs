@@ -31,7 +31,7 @@ describe('Thread entities', () => {
       username: 'amilin',
       title: 'lorem ipsum',
       body: 'lorem ipsum ipsum lorem',
-      date: '2022-01-22T13:52:54.016+07:00',
+      date: '2022-01-22',
       owner: 'user-123',
     };
 
